@@ -22,7 +22,13 @@ router.get('/dev', function(req, res) {
 });
 
 router.get('/ja', function(req, res) {
-    res.render('score/index_ja.pug', {json_data:jsonData});
+    res.render('score/index.pug', {json_data:jsonData, dept:'日本語部門', dept_code:'JA'});
+});
+router.get('/en', function(req, res) {
+    res.render('score/index.pug', {json_data:jsonData, dept:'英語部門', dept_code:'EN'});
+});
+router.get('/total', function(req, res) {
+    res.render('score/index.pug', {json_data:jsonData, dept:'総合優勝', dept_code:'TOTAL'});
 });
 
 // 部門、順位、スコア、学科名、競技者名
