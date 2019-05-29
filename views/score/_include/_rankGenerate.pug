@@ -1,0 +1,12 @@
+mixin rankGenerate(num, dept)
+    .screen(id=`rank${num}`)
+        p.s_p-dept #{dept}
+        p.s_p-rank 第#{num}位
+        - if (1 <= num && num <= 5)
+            - var n = num - 1;
+            - if (rank[n])
+                p.s_p-desc #{rank[n].rank} + "位は" + #{rank[n].course} + "科の " + #{rank[n].name} + " さんです！"
+            - else
+                p.s_p-desc #{num}位の人のデータは存在しません。
+        - else
+            p.s_p-desc 不正な値です。
