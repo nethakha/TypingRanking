@@ -1,0 +1,91 @@
+*
+    padding 0
+    margin 0
+
+.c_back {
+    display block
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    z-index 0
+}
+
+html
+    scroll-behavior smooth
+    width 100%
+    height 100%
+    overflow-x hidden
+    body
+        display flex
+        width 600vw
+        height 100%
+        color #fff
+        text-shadow 2px 2px 5px rgba(18,3,7,0.41),
+                    0px 0px 3px #000
+        background: #5f2c82;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #49a09d, #5f2c82);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #49a09d, #5f2c82); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+//        background #EFEFBB
+//        background -webkit-linear-gradient(to top, #D4D3DD, #EFEFBB)
+//        background linear-gradient(to top, #D4D3DD, #EFEFBB)
+
+        .screen
+            z-index 1
+            display flex
+            justify-content center
+            align-items center
+            flex-flow column nowrap
+            position relative
+            width 100%
+            height 100%
+            .s_p-dept
+                position absolute
+                top 10vh
+                font-size 5vw
+            .s_p-rank
+                font-size 8vw
+                margin-bottom 5vh
+            .s_p-desc
+                font-size 6vw
+                text-align center
+            .s_a-pn
+                display flex
+                justify-content space-between
+                position absolute
+                bottom 0
+                left 10vh
+                right 10vh
+                margin-bottom 10vh
+                width auto
+                .s_a-next, .s_a-prev
+                    display flex
+                    justify-content center
+                    align-items center
+                    background rgba(0, 0, 0, .1)
+                    width 15vh
+                    height 15vh
+                    border-radius 100%
+                    text-decoration none
+                    font-size 10vh
+                    transition all .2s ease
+                    &:hover
+                        background rgba(0, 0, 0, .3)
+                    .lt, .gt
+                        content ""
+                        display block
+                        width 5vh
+                        height 5vh
+                        color #fff
+                        border-top solid 2px
+                        border-left solid 2px
+                    .lt
+                        transform rotate(-45deg) translate(15%, 15%)
+                    .gt
+                        transform rotate(135deg) translate(15%, 15%)
+            &:nth-child(even)
+                //background #efefef
+
+

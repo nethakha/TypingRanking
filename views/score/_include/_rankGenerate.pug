@@ -9,16 +9,27 @@ mixin rankGenerate(dept)
                 p.s_p-dept #{dept}
                 p.s_p-rank 第#{num}位
                 - if (1 <= num && num <= 5 && dept != '総合優勝')
-                    +rankExists(num, dept)
+                    +rankExists(num - 1, dept)
                 - else
                     p.s_p-desc 不正な値です。
+                //-.s_a-pn
+                    - if (num != 5)
+                        a.s_a-prev(href=`#rank${num + 1}`)
+                            .lt
+                    - else
+                        div
+                    - if (num != 1)
+                        a.s_a-prev(href=`#rank${num - 1}`)
+                            .gt
+                    - else
+                        div
             - num--
 
 mixin rankExists(n, dept)
     - if (rank[n])
-        - if(dept == '総合優勝') 
-            p.s_p-desc #{dept} + "は" rank[n].course + "科の" + rank[n].name + "さんです！"
+        - if(dept == '総合優勝')
+            p.s_p-desc #{dept}は#{rank[n].score}点 #{rank[n].course}科の<br>#{rank[n].name}さんです！
         - else
-            p.s_p-desc #{rank[n].rank} + "位は" + #{rank[n].course} + "科の " + #{rank[n].name} + " さんです！"
+            p.s_p-desc #{rank[n].rank}位は#{rank[n].score}点 #{rank[n].course}科の<br>#{rank[n].name}さんです！
     - else
-        p.s_p-desc #{n}位の人のデータは存在しません。
+        p.s_p-desc #{n+1}位の人のデータは存在しません。

@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body h1 {
+  text-align: center;
+  line-height: 2em;
+}
+body .box.Notify {
+  width: 500px;
+  margin: 1em auto;
+  text-align: center;
+  border: 2px solid #f00;
+  padding: 1em;
+}
+body .flex {
+  display: flex;
+  flex-flow: row wrap;
+  width: 1200px;
+  margin: 0 auto;
+  border: 1px solid #eee;
+  justify-content: center;
+}
+body .flex .box {
+  min-width: 150px;
+  display: block;
+  padding: 0 1em 1em;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: 0.5em 0.5em 0 0;
+}
+body .flex .box.DataPost {
+  margin-right: 0;
+}
+body .flex .box h3 {
+  margin: 1em auto;
+}
+body .flex .box hr {
+  margin: 1em 0;
+  border: 1px solid #ccc;
+}
+body .flex .box ul {
+  padding-left: 1em;
+}
+body .flex .box.DataDelete {
+  flex-glow: 1;
+}
+body .flex .box.DataDelete p {
+  font-size: 0.9em;
+  padding: 0.3em 0;
+}
+body .flex .box.DataDelete input {
+  margin: auto auto 0.5em 0.5em;
+}
+body .flex .box.DataDelete input[type="text"] {
+  width: 6em;
+}
+body .flex .box.JSON {
+  width: 400px;
+}
+body .flex .box.JSON ol {
+  overflow-x: scroll;
+  font-size: 0.8em;
+  padding: 1em 0 1em 2em;
+  margin: 1em 0;
+  background: #eceff1;
+  border-radius: 5px;
+}
+body .flex .box.DataPost {
+  width: 450px;
+}
+body .flex .box.DataPost dl dt {
+  float: left;
+  width: 4em;
+  padding-left: 1em;
+}
+body .flex .box.DataPost dl dd i {
+  margin-left: 1em;
+}

@@ -1,0 +1,68 @@
+*
+    margin 0
+    padding 0
+
+body
+    h1
+        text-align center
+        line-height 2em
+    .box.Notify
+        width 500px
+        margin 1em auto
+        text-align center
+        border 2px solid red
+        padding 1em
+    .flex
+        display flex
+        flex-flow row wrap
+        width 1200px
+        margin 0 auto
+        border 1px solid #eee
+        justify-content center
+        .box
+            min-width 150px
+            display block
+            padding 0 1em 1em
+            border 1px solid #ccc
+            border-radius 3px
+            margin .5em .5em 0 0
+            &.DataPost
+                margin-right 0
+            h3
+                margin 1em auto
+            hr
+                margin 1em 0
+                border 1px solid #ccc
+            ul
+                padding-left 1em
+
+            &.DataDelete
+                flex-glow 1
+                //width 200px
+                p
+                    font-size .9em
+                    padding .3em 0
+                input
+                    margin auto auto .5em .5em
+                    &[type="text"]
+                        width 6em
+            &.JSON
+                width 400px
+                ol
+                    overflow-x scroll
+                    font-size .8em
+                    padding 1em 0 1em 2em
+                    margin 1em 0
+                    background #ECEFF1
+                    border-radius 5px
+
+            &.DataPost
+                width 450px
+                dl
+                    dt
+                        float left
+                        width 4em
+                        padding-left 1em
+                    dd
+                        i
+                            margin-left 1em

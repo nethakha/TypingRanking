@@ -3,5 +3,6 @@ mixin head(dept='dev')
         head
             meta(charset="UTF-8")
             title #{dept} タイピングコンテスト 結果発表
-            link(rel="stylesheet" href="/stylesheets/style-score.css")
+            link(rel="stylesheet" href=`/stylesheets/style-score.css`)
+            script(src="/javascripts/keyEvent.js")
         body

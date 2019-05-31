@@ -2,6 +2,23 @@ include _include/_head.pug
 include _include/_rankGenerate.pug
 
 +head(dept)
+
+canvas.c_back
+
+script.
+    window.onload = function() {
+        Particles.init({
+            selector: '.c_back',
+            color:    '#FFFFFF',
+            maxParticles: 150,
+            minDistance: 100,
+            sizeVariations:   2,
+            connectParticles: true
+        });
+    };
+
+.screen#rank0
+    p.s_p-rank #{dept} 結果発表
 -
     rank = new Array();
     json_data.forEach(function(val, key) {
@@ -12,3 +29,7 @@ include _include/_rankGenerate.pug
     });
 
 +rankGenerate(dept)
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js")
+
+
