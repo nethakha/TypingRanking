@@ -4,103 +4,119 @@ html
         title dev
         link(rel="stylesheet" href=`/stylesheets/style-dev.css`)
     body
-        h1: a(href="./dev") dev
+        canvas.c_back
+        .container
+            h1: a(href="./dev") dev
 
-        - if (typeof g !== "undefined")
-            .box.Notify
-                h3 notification
-                p #{g}
+            - if (typeof g !== "undefined")
+                .box.Notify
+                    h3 notification
+                    p #{g}
 
-        .flex
-            .box.DataDelete
-                h3 DataDelete
-                form(method="POST" action="")
-                    | 添字:
-                    input(type="text" name="number")
-                    input(type="submit" value="送信")
-                p -1 で全てのデータを削除
-                p 未入力で最後のデータを削除
+            .flex
+                .box.DataDelete
+                    h3 DataDelete
+                    form(method="POST" action="")
+                        | 添字:
+                        input(type="text" name="number")
+                        input(type="submit" value="送信")
+                    p -1 で全てのデータを削除
+                    p 未入力で最後のデータを削除
 
-            .box.JSON
-                h3 JSON
-                - if(typeof json_data !== "undefined" && json_data.length !== 0)
-                    p 以下のデータが保持されています。
-                    ol(start="0")
-                        - var strJson
-                        - for (var i=0; i < json_data.length; i++)
-                            - strJson = JSON.stringify(json_data[i])
-                            li: pre: code #{strJson}
-                    p 生データは<a href="/score">ここを参照</a>してください。
-                - else
-                    p データは保持されていません。
+                .box.JSON
+                    h3 JSON
+                    - if(typeof json_data !== "undefined" && json_data.length !== 0)
+                        p 以下のデータが保持されています。
+                        ol(start="0")
+                            - var strJson
+                            - for (var i=0; i < json_data.length; i++)
+                                - strJson = JSON.stringify(json_data[i])
+                                li: pre: code #{strJson}
+                        p 生データは<a href="/score">ここを参照</a>してください。
+                    - else
+                        p データは保持されていません。
 
-            .box.DataPost
-                h3 DataPost
-                form(method="POST" action="/score")
-                    dl
-                        dt dept:
-                        dd
-                            input(type="text" name="dept" value="")
-                            i JA, EN, TOTAL
-                        dt rank:
-                        dd
-                            input(type="text" name="rank" value="")
-                            i 数値
-                        dt score:
-                        dd
-                            input(type="text" name="score" value="")
-                            i 数値
-                        dt course:
-                        dd
-                            input(type="text" name="course" value="")
-                            i 学科名
-                        dt name:
-                        dd
-                            input(type="text" name="name" value="")
-                            i 氏名
+                .box.DataPost
+                    h3 DataPost
+                    form(method="POST" action="/score")
+                        dl
+                            dt dept:
+                            dd
+                                input(type="text" name="dept" value="")
+                                i JA, EN, TOTAL
+                            dt rank:
+                            dd
+                                input(type="text" name="rank" value="")
+                                i 数値
+                            dt score:
+                            dd
+                                input(type="text" name="score" value="")
+                                i 数値
+                            dt course:
+                            dd
+                                input(type="text" name="course" value="")
+                                i 学科名
+                            dt name:
+                            dd
+                                input(type="text" name="name" value="")
+                                i 氏名
+                            input(type="hidden" name="ua" value="web")
+                            dt submit:
+                            dd: input(type="submit" value="送信")
+                    hr
+
+                    form(method="POST" action="/score")
+                        dl
+                            dt JSON:
+                            dd
+                                input(type="text" name="json" value="")
+                            input(type="hidden" name="ua" value="web")
+                            dt submit:
+                            dd: input(type="submit" value="送信")
+
+                .box
+                    h3 SampleDataPost
+                    form(method="POST" action="/score")
+                        input(type="hidden" name="dept" value="JA")
+                        input(type="hidden" name="rank" value="3")
+                        input(type="hidden" name="score" value="100")
+                        input(type="hidden" name="course" value="XX")
+                        input(type="hidden" name="name" value="YANASE")
                         input(type="hidden" name="ua" value="web")
-                        dt submit:
-                        dd: input(type="submit" value="送信")
-                hr
+                        input(type="submit" value="送信")
+                    hr
 
-                form(method="POST" action="/score")
-                    dl
-                        dt JSON:
-                        dd
-                            input(type="text" name="json" value="")
+                    h3 SampleDataPost(Json)
+                    form(method="POST" action="/score")
+                        input(type="hidden" name="json" value='{"dept": "JA", "rank": 4, "score": 88, "course": "CG", "name": "hirose"}')
                         input(type="hidden" name="ua" value="web")
-                        dt submit:
-                        dd: input(type="submit" value="送信")
+                        input(type="submit" value="送信")
+                    hr
 
-            .box
-                h3 SampleDataPost
-                form(method="POST" action="/score")
-                    input(type="hidden" name="dept" value="JA")
-                    input(type="hidden" name="rank" value="3")
-                    input(type="hidden" name="score" value="100")
-                    input(type="hidden" name="course" value="XX")
-                    input(type="hidden" name="name" value="YANASE")
-                    input(type="hidden" name="ua" value="web")
-                    input(type="submit" value="送信")
-                hr
+                    h3 SampleDataPost(JsonArray)
+                    form(method="POST" action="/score")
+                        input(type="hidden" name="json" value='[{"dept":"JA","rank":4,"score":88,"course":"CG","name":"hirose"},{"dept":"JA","rank":3,"score":100,"course":"SE","name":"yanase"},{"dept":"JA","rank":1,"score":200,"course":"TE","name":"jiro"},{"dept":"JA","rank":2,"score":109,"course":"TE","name":"taro"},{"dept":"JA","rank":5,"score":75,"course":"JS","name":"gokuhara"}]')
+                        input(type="hidden" name="ua" value="web")
+                        input(type="submit" value="送信")
 
-                h3 SampleDataPost(Json)
-                form(method="POST" action="/score")
-                    input(type="hidden" name="json" value='{"dept": "JA", "rank": 4, "score": 88, "course": "CG", "name": "hirose"}')
-                    input(type="hidden" name="ua" value="web")
-                    input(type="submit" value="送信")
-                hr
+                .box
+                    h3 Link
+                    ul
+                        li: a(href="/score") score
+                        li: a(href="/score/ja") score/ja
+                        li: a(href="/score/en") score/en
+                        li: a(href="/score/total") score/total
 
-                h3 SampleDataPost(JsonArray)
-                form(method="POST" action="/score")
-                    input(type="hidden" name="json" value='[{"dept":"JA","rank":4,"score":88,"course":"CG","name":"hirose"},{"dept":"JA","rank":3,"score":100,"course":"SE","name":"yanase"},{"dept":"JA","rank":1,"score":200,"course":"TE","name":"jiro"},{"dept":"JA","rank":2,"score":109,"course":"TE","name":"taro"},{"dept":"JA","rank":5,"score":75,"course":"JS","name":"gokuhara"}]')
-                    input(type="hidden" name="ua" value="web")
-                    input(type="submit" value="送信")
+        script.
+            window.onload = function() {
+                Particles.init({
+                    selector: '.c_back',
+                    color:    '#FFFFFF',
+                    maxParticles: 150,
+                    minDistance: 100,
+                    sizeVariations:   2,
+                    connectParticles: true
+                });
+            };
 
-            .box
-                h3 Link
-                ul
-                    li: a(href="/score") score
-                    li: a(href="/score/ja") score/ja
-                    li: a(href="/score/en") score/en
-                    li: a(href="/score/total") score/total
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js")

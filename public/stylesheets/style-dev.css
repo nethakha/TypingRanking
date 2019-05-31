@@ -2,63 +2,106 @@
   margin: 0;
   padding: 0;
 }
-body h1 {
+body {
+  color: #fff;
+  background: #000;
+  background: -webkit-linear-gradient(to top, #434343, #000);
+  background: linear-gradient(to top, #434343, #000);
+}
+body .c_back {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+body .container {
+  z-index: 1;
+  position: relative;
+}
+body .container a {
+  color: #fff;
+}
+body .container a:hover {
+  color: #ccc;
+}
+body .container h1 {
   text-align: center;
   line-height: 2em;
 }
-body .box.Notify {
+body .container input {
+  background: rgba(255,255,255,0.3);
+  padding: 0.2em 0.2em;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 3px;
+  color: #fff;
+}
+body .container input[type="submit"] {
+  width: 4em;
+}
+body .container .box.Notify {
   width: 500px;
   margin: 1em auto;
   text-align: center;
   border: 2px solid #f00;
   padding: 1em;
+  background: rgba(255,0,0,0.3);
 }
-body .flex {
+body .container .flex {
   display: flex;
   flex-flow: row wrap;
   width: 1200px;
   margin: 0 auto;
-  border: 1px solid #eee;
+  padding-bottom: 0.5em;
+  border: 1px solid rgba(255,255,255,0.3);
   justify-content: center;
 }
-body .flex .box {
+body .container .flex .box {
+  overflow: hidden;
   min-width: 150px;
   display: block;
   padding: 0 1em 1em;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255,255,255,0.5);
   border-radius: 3px;
   margin: 0.5em 0.5em 0 0;
+  position: relative;
+  transition: 0.1s all ease;
 }
-body .flex .box.DataPost {
+body .container .flex .box:hover {
+  background: rgba(0,0,0,0.5);
+}
+body .container .flex .box.DataPost {
   margin-right: 0;
 }
-body .flex .box h3 {
+body .container .flex .box h3 {
   margin: 1em auto;
 }
-body .flex .box hr {
+body .container .flex .box hr {
   margin: 1em 0;
   border: 1px solid #ccc;
 }
-body .flex .box ul {
+body .container .flex .box ul {
   padding-left: 1em;
 }
-body .flex .box.DataDelete {
+body .container .flex .box.DataDelete {
   flex-glow: 1;
 }
-body .flex .box.DataDelete p {
+body .container .flex .box.DataDelete p {
   font-size: 0.9em;
   padding: 0.3em 0;
 }
-body .flex .box.DataDelete input {
+body .container .flex .box.DataDelete input {
   margin: auto auto 0.5em 0.5em;
 }
-body .flex .box.DataDelete input[type="text"] {
+body .container .flex .box.DataDelete input[type="text"] {
   width: 6em;
 }
-body .flex .box.JSON {
+body .container .flex .box.JSON {
   width: 400px;
 }
-body .flex .box.JSON ol {
+body .container .flex .box.JSON ol {
   overflow-x: scroll;
   font-size: 0.8em;
   padding: 1em 0 1em 2em;
@@ -66,14 +109,14 @@ body .flex .box.JSON ol {
   background: #eceff1;
   border-radius: 5px;
 }
-body .flex .box.DataPost {
+body .container .flex .box.DataPost {
   width: 450px;
 }
-body .flex .box.DataPost dl dt {
+body .container .flex .box.DataPost dl dt {
   float: left;
   width: 4em;
   padding-left: 1em;
 }
-body .flex .box.DataPost dl dd i {
+body .container .flex .box.DataPost dl dd i {
   margin-left: 1em;
 }

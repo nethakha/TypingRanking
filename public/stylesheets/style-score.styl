@@ -2,16 +2,6 @@
     padding 0
     margin 0
 
-.c_back {
-    display block
-    position fixed
-    top 0
-    left 0
-    width 100%
-    height 100%
-    z-index 0
-}
-
 html
     scroll-behavior smooth
     width 100%
@@ -22,25 +12,37 @@ html
         height 100%
         color #fff
         text-shadow 2px 2px 5px rgba(18,3,7,0.41), 0px 0px 3px #000
-        background: #5f2c82;  /* fallback for old browsers */
-        background: -webkit-linear-gradient(to top, #49a09d, #5f2c82);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to top, #49a09d, #5f2c82); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        .c_back
+            display block
+            position fixed
+            top 0
+            left 0
+            width 100%
+            height 100%
+            z-index 0
+        &.ja
+            background: #4776E6;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        &.en
+            background: #43cea2;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #185a9d, #43cea2);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         &.rank
             width 600vw
         &.total
             width 200vw
-
-//        background #EFEFBB
-//        background -webkit-linear-gradient(to top, #D4D3DD, #EFEFBB)
-//        background linear-gradient(to top, #D4D3DD, #EFEFBB)
-
+            background: #F09819;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to bottom, #EDDE5D, #F09819);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to bottom, #EDDE5D, #F09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         .screen
+            position relative
             z-index 1
             display flex
             justify-content center
             align-items center
             flex-flow column nowrap
-            position relative
             width 100vw
             height 100%
             .s_p-dept
