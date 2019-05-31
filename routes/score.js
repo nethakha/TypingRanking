@@ -81,8 +81,6 @@ router.post('/', function(req, res) {
     }
 });
 
-
-
 router.post('/dev', function(req, res) {
     let ret, num = req.body.number;
     if(jsonData.length != 0) {

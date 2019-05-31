@@ -5,4 +5,7 @@ mixin head(dept='dev')
             title #{dept} タイピングコンテスト 結果発表
             link(rel="stylesheet" href=`/stylesheets/style-score.css`)
             script(src="/javascripts/keyEvent.js")
-        body
+        - if (dept == 'TOTAL')
+            body.total
+        - else
+            body.rank

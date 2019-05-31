@@ -1,6 +1,6 @@
+let loc = location.href.split('/')[4].split('#')[0];
 
 document.onkeydown = function() {
-    let loc = location.href.split('/')[4].split('#')[0];
     let param = typeof location.hash != undefined
         ? location.hash : 0;
     let [p, n] = loc == 'total' ? rankHash(param, loc) : rankHash(param);
@@ -14,9 +14,9 @@ document.onkeydown = function() {
         event.preventDefault();
     }
 
-    if(event.keyCode == 39 && n != 0 && n != -1) {
+    if(event.keyCode == 39 && n != 0) {
         location.hash = 'rank' + n;
-    } else if(event.keyCode == 37 && p != -1) {
+    } else if(event.keyCode == 37) {
         location.hash = 'rank' + p;
     }
 }
@@ -28,7 +28,7 @@ function rankHash(param, loc) {
                 return [0, -1];
                 break;
             default :
-                return [-1, 1];
+                return [-1, 0];
                 break;
         }
     } else {

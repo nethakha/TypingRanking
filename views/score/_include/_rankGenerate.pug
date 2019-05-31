@@ -1,7 +1,8 @@
 mixin rankGenerate(dept)
     - if(dept == '総合優勝')
-        p.s_p-dept #{dept}
-        +rankExists(1, dept)
+        .screen(id="rank1")
+            p.s_p-dept #{dept}
+            +rankExists(0, dept)
     - else
         - var num = 5
         while num > 0
@@ -12,17 +13,6 @@ mixin rankGenerate(dept)
                     +rankExists(num - 1, dept)
                 - else
                     p.s_p-desc 不正な値です。
-                //-.s_a-pn
-                    - if (num != 5)
-                        a.s_a-prev(href=`#rank${num + 1}`)
-                            .lt
-                    - else
-                        div
-                    - if (num != 1)
-                        a.s_a-prev(href=`#rank${num - 1}`)
-                            .gt
-                    - else
-                        div
             - num--
 
 mixin rankExists(n, dept)
@@ -31,5 +21,7 @@ mixin rankExists(n, dept)
             p.s_p-desc #{dept}は#{rank[n].score}点 #{rank[n].course}科の<br>#{rank[n].name}さんです！
         - else
             p.s_p-desc #{rank[n].rank}位は#{rank[n].score}点 #{rank[n].course}科の<br>#{rank[n].name}さんです！
+    - else if(dept == '総合優勝')
+        p.s_p-desc 総合優勝者のデータは存在しません。
     - else
         p.s_p-desc #{n+1}位の人のデータは存在しません。
