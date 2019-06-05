@@ -20,10 +20,10 @@ script.
 .screen#rank0
     p.s_p-rank #{dept} 結果発表
 -
-    rank = new Array();
+    rank = [];
     json_data.forEach(function(val, key) {
         var r = json_data[key].rank;
-        if(1 <= r && r <= 5 && json_data[key].dept == dept_code) {
+        if(1 <= r && r <= 5 && json_data[key].dept === dept_code) {
             rank[r-1] = json_data[key];
         }
     });

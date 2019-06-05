@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
-var jsonData = new Array();
+var jsonData = [];
 var addData;
 
 app.set("view engine", "pug");
@@ -43,7 +43,7 @@ router.get('/total', function(req, res) {
 router.post('/', function(req, res) {
     console.log(req.body.json);
     let message, ret, r = req.body;
-    if(req.body.json != undefined) {
+    if(req.body.json !== undefined) {
         r = JSON.parse(req.body.json);
         console.log(r);
     }
@@ -72,7 +72,7 @@ router.post('/', function(req, res) {
         message = "次のデータを追加しました。" + ret;
     }
 
-    if(req.body.ua == 'web') {
+    if(req.body.ua === 'web') {
         let str = addData;
         res.redirect('/score/dev?valid=' + message);
     } else {
@@ -83,8 +83,8 @@ router.post('/', function(req, res) {
 
 router.post('/dev', function(req, res) {
     let ret, num = req.body.number;
-    if(jsonData.length != 0) {
-        if(num != -1) {
+    if(jsonData.length !== 0) {
+        if(num !== -1) {
             jsonData.splice(num, 1);
             ret = num + "番目の要素を消しちゃいました〜っあせあせ";
             res.render('score/index_dev.pug', {json_data:jsonData, g:ret});
@@ -102,7 +102,7 @@ router.post('/dev', function(req, res) {
 // 添字を受け取る
 router.delete('/:number', function(req, res) {
     let num = req.params.number;
-    if(jsonData.length != 0) {
+    if(jsonData.length !== 0) {
         jsonData.splice(num, 1);
         ret = num + "を消しちゃいました〜っあせあせ";
     } else {
