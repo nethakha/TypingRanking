@@ -1,6 +1,16 @@
+@import "_include/_animation"
+
 *
     padding 0
     margin 0
+
+for num in (1..5)
+    #rank{num}:target
+        .s_p-rank
+            animation fade-in 2s ease-in-out
+        .s_p-desc
+            opacity 0
+            animation fade-in 2s ease-in-out 2s forwards
 
 html
     scroll-behavior smooth
@@ -53,6 +63,7 @@ html
                 font-size 8vw
                 margin-bottom 5vh
             .s_p-desc
+                position relative
                 font-size 6vw
                 text-align center
             .s_a-pn

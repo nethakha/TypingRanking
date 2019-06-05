@@ -1,6 +1,113 @@
+@-moz-keyframes fade-in {
+  0% {
+    right: -20%;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    right: -20%;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+@-o-keyframes fade-in {
+  0% {
+    right: -20%;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    right: -20%;
+    opacity: 0;
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+  }
+}
+@-moz-keyframes show {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes show {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 * {
   padding: 0;
   margin: 0;
+}
+#rank1:target .s_p-rank {
+  animation: fade-in 2s ease-in-out;
+}
+#rank1:target .s_p-desc {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 2s forwards;
+}
+#rank2:target .s_p-rank {
+  animation: fade-in 2s ease-in-out;
+}
+#rank2:target .s_p-desc {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 2s forwards;
+}
+#rank3:target .s_p-rank {
+  animation: fade-in 2s ease-in-out;
+}
+#rank3:target .s_p-desc {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 2s forwards;
+}
+#rank4:target .s_p-rank {
+  animation: fade-in 2s ease-in-out;
+}
+#rank4:target .s_p-desc {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 2s forwards;
+}
+#rank5:target .s_p-rank {
+  animation: fade-in 2s ease-in-out;
+}
+#rank5:target .s_p-desc {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out 2s forwards;
 }
 html {
   scroll-behavior: smooth;
@@ -12,7 +119,7 @@ html body {
   display: flex;
   height: 100%;
   color: #fff;
-  text-shadow: 2px 2px 5px rgba(18,3,7,0.41), 0px 0px 3px #000;
+  text-shadow: 2px 2px 5px rgba(18,3,7,0.41), 0 0 3px #000;
 }
 html body .c_back {
   display: block;
@@ -62,6 +169,7 @@ html body .screen .s_p-rank {
   margin-bottom: 5vh;
 }
 html body .screen .s_p-desc {
+  position: relative;
   font-size: 6vw;
   text-align: center;
 }
