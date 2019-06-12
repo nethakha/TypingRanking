@@ -1,15 +1,33 @@
 var express = require('express');
 var router = express.Router();
 var app = express();
+
+// JSONのデータを保持する配列
 var jsonData = [];
+// JSONの追加データを受け取る変数
 var addData;
 
+// Pugを用いる
 app.set("view engine", "pug");
 
+
+// score/ にGETリクエストが飛んできた場合、
+// JSONデータを表示する
 router.get('/', function(req, res) {
     res.send(jsonData);
 });
 
+
+router.get('/dev/c', function(req, res, next) {
+    res.render('score/c.pug');
+})
+
+
+// 管理画面の表示処理
+router.get('/dev', function(req, res) {
+    res.render('score/index_dev.pug', {json_data:jsonData});
+});
+// 管理画面に通知があった場合
 router.get('/dev', function(req, res, next) {
     if(req.query.valid) {
         res.render('score/index_dev.pug', {json_data:jsonData, g:req.query.valid});
@@ -17,10 +35,9 @@ router.get('/dev', function(req, res, next) {
         next();
     }
 });
-router.get('/dev', function(req, res) {
-    res.render('score/index_dev.pug', {json_data:jsonData});
-});
 
+
+// 日本語部門、英語部門、総合優勝ページの表示処理
 router.get('/ja', function(req, res) {
     res.render('score/index.pug', {json_data:jsonData, dept:'日本語部門', dept_code:'JA'});
 });
@@ -31,6 +48,9 @@ router.get('/total', function(req, res) {
     res.render('score/index.pug', {json_data:jsonData, dept:'総合優勝', dept_code:'TOTAL'});
 });
 
+
+// score/に対してPOSTがあった場合の処理
+//
 // 部門、順位、スコア、学科名、競技者名
 // dept, rank, score, course, name
 //
@@ -81,6 +101,8 @@ router.post('/', function(req, res) {
     }
 });
 
+
+// PostによるDelete実装
 router.post('/dev', function(req, res) {
     let ret, num = req.body.number;
     if(jsonData.length !== 0) {
@@ -99,7 +121,9 @@ router.post('/dev', function(req, res) {
     }
 });
 
+
 // 添字を受け取る
+// DeleteによるDelete実装
 router.delete('/:number', function(req, res) {
     let num = req.params.number;
     if(jsonData.length !== 0) {
@@ -110,5 +134,6 @@ router.delete('/:number', function(req, res) {
     }
     res.send(ret);
 });
+
 
 module.exports = router;
