@@ -18,9 +18,9 @@ router.get('/', function(req, res) {
 });
 
 
-router.get('/dev/c', function(req, res, next) {
+router.get('/dev/c', function(req, res) {
     res.render('score/c.pug');
-})
+});
 
 
 // 管理画面の表示処理
@@ -93,7 +93,7 @@ router.post('/', function(req, res) {
     }
 
     if(req.body.ua === 'web') {
-        let str = addData;
+        // let str = addData; // ← なんだっけこれ
         res.redirect('/score/dev?valid=' + message);
     } else {
         res.header('Content-Type', 'application/json; charset=utf-8');
