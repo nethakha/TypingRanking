@@ -106,13 +106,13 @@ router.post('/', function(req, res) {
 router.post('/dev', function(req, res) {
     let ret, num = req.body.number;
     if(jsonData.length !== 0) {
-        if(num !== -1) {
+        if(num == -1) {
+            jsonData = [];
+            ret = "ぜんぶきれいに掃除しておきましたぁっ！……え？まずかったんですか？";
+            res.render('score/index_dev.pug', {json_data:jsonData, g:ret});
+        } else if(num !== -1) {
             jsonData.splice(num, 1);
             ret = num + "番目の要素を消しちゃいました〜っあせあせ";
-            res.render('score/index_dev.pug', {json_data:jsonData, g:ret});
-        } else {
-            jsonData.length = 0;
-            ret = "ぜんぶきれいに掃除しておきましたぁっ！……え？まずかったんですか？";
             res.render('score/index_dev.pug', {json_data:jsonData, g:ret});
         }
     } else {
