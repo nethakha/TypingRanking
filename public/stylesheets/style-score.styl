@@ -31,21 +31,21 @@ html
             height 100%
             z-index 0
         &.ja
-            background: #4776E6;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to bottom, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background #4776E6
+            background -webkit-linear-gradient(to bottom, #8E54E9, #4776E6)
+            background linear-gradient(to bottom, #8E54E9, #4776E6)
 
         &.en
-            background: #43cea2;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #185a9d, #43cea2);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to bottom, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background #43cea2
+            background -webkit-linear-gradient(to bottom, #185a9d, #43cea2)
+            background linear-gradient(to bottom, #185a9d, #43cea2)
         &.rank
             width 600vw
         &.total
             width 200vw
-            background: #F09819;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to bottom, #EDDE5D, #F09819);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to bottom, #EDDE5D, #F09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background #F09819
+            background -webkit-linear-gradient(to bottom, #EDDE5D, #F09819)
+            background linear-gradient(to bottom, #EDDE5D, #F09819)
         .screen
             position relative
             z-index 1
@@ -56,14 +56,16 @@ html
             width 100vw
             height 100%
             .s_p-dept
-                position absolute
-                top 10vh
+                position relative
+                top -5vh
                 font-size 5vw
             .s_p-rank
+                position relative
+                top 1vh
                 font-size 8vw
-                margin-bottom 5vh
             .s_p-desc
                 position relative
+                top 5vh
                 font-size 6vw
                 text-align center
             .s_a-pn
@@ -73,7 +75,7 @@ html
                 bottom 0
                 left 10vh
                 right 10vh
-                margin-bottom 10vh
+                margin-bottom 15vh
                 width auto
                 .s_a-next, .s_a-prev
                     display flex

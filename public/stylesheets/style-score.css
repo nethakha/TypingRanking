@@ -119,7 +119,7 @@ html body {
   display: flex;
   height: 100%;
   color: #fff;
-  text-shadow: 2px 2px 5px rgba(18,3,7,0.41), 0 0 3px #000;
+  text-shadow: 2px 2px 5px rgba(18,3,7,0.41), 0px 0px 3px #000;
 }
 html body .c_back {
   display: block;
@@ -131,23 +131,23 @@ html body .c_back {
   z-index: 0;
 }
 html body.ja {
-  background: #4776e6; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #8e54e9, #4776e6); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #8e54e9, #4776e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #4776e6;
+  background: -webkit-linear-gradient(to bottom, #8e54e9, #4776e6);
+  background: linear-gradient(to bottom, #8e54e9, #4776e6);
 }
 html body.en {
-  background: #43cea2; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #185a9d, #43cea2); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #43cea2;
+  background: -webkit-linear-gradient(to bottom, #185a9d, #43cea2);
+  background: linear-gradient(to bottom, #185a9d, #43cea2);
 }
 html body.rank {
   width: 600vw;
 }
 html body.total {
   width: 200vw;
-  background: #f09819; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #edde5d, #f09819); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #edde5d, #f09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #f09819;
+  background: -webkit-linear-gradient(to bottom, #edde5d, #f09819);
+  background: linear-gradient(to bottom, #edde5d, #f09819);
 }
 html body .screen {
   position: relative;
@@ -160,16 +160,18 @@ html body .screen {
   height: 100%;
 }
 html body .screen .s_p-dept {
-  position: absolute;
-  top: 10vh;
+  position: relative;
+  top: -5vh;
   font-size: 5vw;
 }
 html body .screen .s_p-rank {
+  position: relative;
+  top: 1vh;
   font-size: 8vw;
-  margin-bottom: 5vh;
 }
 html body .screen .s_p-desc {
   position: relative;
+  top: 5vh;
   font-size: 6vw;
   text-align: center;
 }
@@ -180,7 +182,7 @@ html body .screen .s_a-pn {
   bottom: 0;
   left: 10vh;
   right: 10vh;
-  margin-bottom: 10vh;
+  margin-bottom: 15vh;
   width: auto;
 }
 html body .screen .s_a-pn .s_a-next,
