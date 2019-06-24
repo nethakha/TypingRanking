@@ -5,6 +5,7 @@ mixin head(dept='dev', dept_code='undefined')
             title #{dept} タイピングコンテスト 結果発表
             link(rel="stylesheet" href=`/stylesheets/style-score.css`)
             script(src="/javascripts/keyEvent.js")
+            meta(name="viewport" content="width=device-width, initial-scale=1")
         - if (dept_code == 'TOTAL')
             body.total
         - else if (dept_code == 'JA')
