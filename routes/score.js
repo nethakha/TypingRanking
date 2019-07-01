@@ -104,7 +104,7 @@ router.post('/', function(req, res) {
 
 // PostによるDelete実装
 router.post('/dev', function(req, res) {
-    let ret, num = req.body.number;
+    let ret, num = Number(req.body.number);
     if(jsonData.length !== 0) {
         if(num === -1) {
             jsonData = [];
