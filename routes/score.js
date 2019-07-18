@@ -39,10 +39,10 @@ router.get('/dev', function(req, res, next) {
 
 // 日本語部門、英語部門、総合優勝ページの表示処理
 router.get('/ja', function(req, res) {
-    res.render('score/index.pug', {json_data:jsonData, dept:'日本語部門', dept_code:'JA'});
+    res.render('score/index.pug', {json_data:jsonData, dept:'日本文部門', dept_code:'JA'});
 });
 router.get('/en', function(req, res) {
-    res.render('score/index.pug', {json_data:jsonData, dept:'英語部門', dept_code:'EN'});
+    res.render('score/index.pug', {json_data:jsonData, dept:'英文部門', dept_code:'EN'});
 });
 router.get('/total', function(req, res) {
     res.render('score/index.pug', {json_data:jsonData, dept:'総合優勝', dept_code:'TOTAL'});

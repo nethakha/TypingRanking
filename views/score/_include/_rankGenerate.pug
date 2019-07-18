@@ -18,9 +18,9 @@ mixin rankGenerate(dept)
 mixin rankExists(n, dept)
     - if (rank[n])
         - if(dept == '総合優勝')
-            p.s_p-desc #{dept}は<br>#{rank[n].score}点 #{rank[n].course}の<br>#{rank[n].name}さんです！
+            p.s_p-desc #{dept} <br>スコア #{rank[n].score} <br>#{rank[n].course} <br>#{rank[n].name} さんです！
         - else
-            p.s_p-desc #{rank[n].rank}位は<br>#{rank[n].score}点 #{rank[n].course}の<br>#{rank[n].name}さんです！
+            p.s_p-desc スコア #{rank[n].score} <br>#{rank[n].course} <br>#{rank[n].name} さんです！
     - else if(dept == '総合優勝')
         p.s_p-desc 総合優勝者のデータは存在しません。
     - else
